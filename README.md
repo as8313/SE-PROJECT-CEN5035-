@@ -10,6 +10,7 @@ into one unified system.
 ## Team Members
 Front End:
 - Arvindh Sundararajan
+  
 Back End:
 - Raghul Siddarath Chandrasekar
 - Trinesh Reddy Bayapureddy Sannala
