@@ -1,5 +1,5 @@
-/* ── SignUp Page ── */
-.signup-page {
+/* ── SignIn Page ── */
+.signin-page {
     width: 100%;
     min-height: 100vh;
     display: flex;
@@ -9,11 +9,11 @@
     padding: 40px 20px;
 }
 
-/* ── Glassmorphism Form Card ── */
-.sign-up-form {
+/* ── Glassmorphism Card ── */
+.signin-container {
     width: 100%;
-    max-width: 440px;
-    padding: 48px 40px;
+    max-width: 400px;
+    padding: 48px;
     background: var(--glass-bg);
     backdrop-filter: blur(var(--glass-blur));
     -webkit-backdrop-filter: blur(var(--glass-blur));
@@ -23,12 +23,12 @@
 }
 
 /* ── Header ── */
-.signup-header {
+.signin-header {
     text-align: center;
     margin-bottom: 32px;
 }
 
-.signup-header h2 {
+.signin-header h2 {
     font-family: var(--font-heading);
     font-size: 1.8rem;
     font-weight: 700;
@@ -36,17 +36,17 @@
     margin-bottom: 8px;
 }
 
-.signup-subtitle {
+.signin-subtitle {
     color: var(--color-gray-500);
     font-size: 0.95rem;
 }
 
 /* ── Input Groups ── */
-.signup-inp {
+.input-group {
     margin-bottom: 20px;
 }
 
-.signup-inp label {
+.input-group label {
     display: block;
     font-size: 0.85rem;
     font-weight: 500;
@@ -54,7 +54,7 @@
     margin-bottom: 8px;
 }
 
-.signup-inp input {
+.input-group input {
     width: 100%;
     padding: 12px 16px;
     background: var(--color-navy-mid);
@@ -66,17 +66,17 @@
     transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
 }
 
-.signup-inp input::placeholder {
+.input-group input::placeholder {
     color: var(--color-gray-500);
 }
 
-.signup-inp input:focus {
+.input-group input:focus {
     border-color: var(--color-orange);
     box-shadow: 0 0 0 3px var(--color-orange-glow);
 }
 
 /* ── Submit Button ── */
-.signup-btn {
+.signin-btn {
     width: 100%;
     padding: 14px;
     margin-top: 8px;
@@ -90,97 +90,26 @@
     transition: transform var(--transition-fast), box-shadow var(--transition-fast);
 }
 
-.signup-btn:hover {
+.signin-btn:hover {
     transform: translateY(-2px);
     box-shadow: var(--shadow-glow);
 }
 
-.signup-btn:disabled {
-    opacity: 0.6;
-    cursor: not-allowed;
-    transform: none;
-    box-shadow: none;
-}
-
 /* ── Links ── */
-.signup-links {
+.signin-links {
     text-align: center;
     margin-top: 20px;
     color: var(--color-gray-500);
     font-size: 0.9rem;
 }
 
-.signup-links a {
+.signin-links a {
     color: var(--color-orange);
     text-decoration: none;
     font-weight: 500;
     transition: color var(--transition-fast);
 }
 
-.signup-links a:hover {
+.signin-links a:hover {
     color: var(--color-orange-hover);
-}
-
-/* ── Error Messages ── */
-.error {
-    color: var(--color-error);
-    font-size: 0.75rem;
-    font-weight: 500;
-    margin-top: 6px;
-    display: block;
-}
-
-/* ── Error Shake Animation ── */
-@keyframes shake {
-
-    0%,
-    100% {
-        transform: translateX(0);
-    }
-
-    20%,
-    60% {
-        transform: translateX(-6px);
-    }
-
-    40%,
-    80% {
-        transform: translateX(6px);
-    }
-}
-
-.signup-inp.has-error input {
-    border-color: var(--color-error);
-    animation: shake 0.4s ease;
-}
-
-/* ── Password Strength Meter ── */
-.strength-meter {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    margin-top: 8px;
-    max-width: 60%;
-}
-
-.strength-track {
-    flex: 1;
-    height: 3px;
-    background: var(--color-gray-700);
-    border-radius: 2px;
-    overflow: hidden;
-}
-
-.strength-bar {
-    height: 100%;
-    border-radius: 2px;
-    transition: width 0.3s ease, background 0.3s ease;
-}
-
-.strength-label {
-    font-size: 0.7rem;
-    font-weight: 600;
-    min-width: 40px;
-    letter-spacing: 0.3px;
-    text-transform: uppercase;
 }

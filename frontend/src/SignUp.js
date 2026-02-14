@@ -88,7 +88,7 @@ function SignUp({
                     <p className="signup-subtitle">Join GatorDash today</p>
                 </div>
 
-                <div className="signup-inp">
+                <div className={`signup-inp${errors.name ? ' has-error' : ''}`}>
                     <label>Name</label>
                     <input
                         type="text"
@@ -100,7 +100,7 @@ function SignUp({
                     {errors.name && <span className="error">{errors.name}</span>}
                 </div>
 
-                <div className="signup-inp">
+                <div className={`signup-inp${errors.email ? ' has-error' : ''}`}>
                     <label>Email</label>
                     <input
                         type="email"
@@ -111,7 +111,7 @@ function SignUp({
                     {errors.email && <span className="error">{errors.email}</span>}
                 </div>
 
-                <div className="signup-inp">
+                <div className={`signup-inp${errors.phone ? ' has-error' : ''}`}>
                     <label>Phone Number</label>
                     <input
                         type="tel"
@@ -122,7 +122,7 @@ function SignUp({
                     {errors.phone && <span className="error">{errors.phone}</span>}
                 </div>
 
-                <div className="signup-inp">
+                <div className={`signup-inp${errors.password ? ' has-error' : ''}`}>
                     <label>Password</label>
                     <input
                         type="password"
@@ -151,7 +151,7 @@ function SignUp({
                     )}
                 </div>
 
-                <div className="signup-inp">
+                <div className={`signup-inp${errors.confirmPassword ? ' has-error' : ''}`}>
                     <label>Confirm Password</label>
                     <input
                         type="password"
