@@ -2,7 +2,7 @@ import React from 'react';
 import Navbar from './Navbar';
 import './FoodStalls.css';
 
-import starbucks from './assets/starbucks.jpg';
+import starbucks from './assets/starbucks.png';
 import burger352 from './assets/Burger352.jpeg';
 import panda from './assets/panda.png';
 import subway from './assets/subway.jpeg';
