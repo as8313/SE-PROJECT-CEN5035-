@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import gatorLogo from './assets/gator-logo.png';
 import './SignUp.css';
@@ -12,6 +12,9 @@ function SignUp({
     errors, setErrors,
     passwordFocused, setPasswordFocused
 }) {
+
+    const [showPassword, setShowPassword] = useState(false);
+    const [showConfirmPassword, setShowConfirmPassword] = useState(false);
 
     const handleChange = (field, setter) => (e) => {
         setter(e.target.value);
@@ -126,14 +129,24 @@ function SignUp({
 
                 <div className={`signup-inp${errors.password ? ' has-error' : ''}`}>
                     <label>Password</label>
-                    <input
-                        type="password"
-                        placeholder="Set up your password"
-                        value={password}
-                        onChange={handleChange('password', setPassword)}
-                        onFocus={() => setPasswordFocused(true)}
-                        onBlur={() => setPasswordFocused(false)}
-                    />
+                    <div className="password-wrapper">
+                        <input
+                            type={showPassword ? 'text' : 'password'}
+                            placeholder="Set up your password"
+                            value={password}
+                            onChange={handleChange('password', setPassword)}
+                            onFocus={() => setPasswordFocused(true)}
+                            onBlur={() => setPasswordFocused(false)}
+                        />
+                        <button
+                            type="button"
+                            className="toggle-password"
+                            onClick={() => setShowPassword(!showPassword)}
+                            aria-label={showPassword ? 'Hide password' : 'Show password'}
+                        >
+                            {showPassword ? '🙈' : '👁'}
+                        </button>
+                    </div>
                     {errors.password && <span className="error">{errors.password}</span>}
                     {password && (
                         <div className="strength-meter">
@@ -155,12 +168,22 @@ function SignUp({
 
                 <div className={`signup-inp${errors.confirmPassword ? ' has-error' : ''}`}>
                     <label>Confirm Password</label>
-                    <input
-                        type="password"
-                        placeholder="Re-enter your password"
-                        value={confirmPassword}
-                        onChange={handleChange('confirmPassword', confirmSetPassword)}
-                    />
+                    <div className="password-wrapper">
+                        <input
+                            type={showConfirmPassword ? 'text' : 'password'}
+                            placeholder="Re-enter your password"
+                            value={confirmPassword}
+                            onChange={handleChange('confirmPassword', confirmSetPassword)}
+                        />
+                        <button
+                            type="button"
+                            className="toggle-password"
+                            onClick={() => setShowConfirmPassword(!showConfirmPassword)}
+                            aria-label={showConfirmPassword ? 'Hide password' : 'Show password'}
+                        >
+                            {showConfirmPassword ? '🙈' : '👁'}
+                        </button>
+                    </div>
                     {errors.confirmPassword && <span className="error">{errors.confirmPassword}</span>}
                 </div>
 

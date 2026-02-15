@@ -10,12 +10,12 @@ import halal from './assets/halal.png';
 import babasPizza from "./assets/baba's pizza.jpeg";
 
 const stalls = [
-    { name: 'Starbucks', image: starbucks, color: '#0D7377' },
-    { name: 'Burger 352', image: burger352, color: '#FFA500' },
-    { name: 'Panda Express', image: panda, color: '#FF0000' },
-    { name: 'Subway', image: subway, color: '#5F8D4E' },
-    { name: 'Halal Shack', image: halal, color: '#FEFFDE' },
-    { name: "Baba's Pizza", image: babasPizza, color: '#FFD4D4' },
+    { name: 'Starbucks', image: starbucks, color: '#0D7377', desc: 'Coffee & Pastries' },
+    { name: 'Burger 352', image: burger352, color: '#FFA500', desc: 'Burgers & Fries' },
+    { name: 'Panda Express', image: panda, color: '#FF0000', desc: 'Chinese Cuisine' },
+    { name: 'Subway', image: subway, color: '#5F8D4E', desc: 'Subs & Salads' },
+    { name: 'Halal Shack', image: halal, color: '#FEFFDE', desc: 'Halal Street Food' },
+    { name: "Baba's Pizza", image: babasPizza, color: '#FFD4D4', desc: 'Pizza & Italian' },
 ];
 
 function FoodStalls({ onLogout }) {
@@ -25,13 +25,25 @@ function FoodStalls({ onLogout }) {
             <h2 className="stalls-heading">Explore Food Stalls</h2>
             <div className="stalls-grid">
                 {stalls.map((stall, index) => (
-                    <div className="stall-card" key={index}>
+                    <div
+                        className="stall-card"
+                        key={index}
+                        style={{ animationDelay: `${index * 0.1}s` }}
+                    >
                         <div
                             className="stall-color-bar"
                             style={{ background: stall.color }}
                         />
-                        <img src={stall.image} alt={stall.name} />
-                        <p className="stall-name">{stall.name}</p>
+                        <div className="stall-img-wrapper">
+                            <img src={stall.image} alt={stall.name} />
+                            <div className="stall-overlay">
+                                <span>View Menu</span>
+                            </div>
+                        </div>
+                        <div className="stall-info">
+                            <p className="stall-name">{stall.name}</p>
+                            <p className="stall-desc">{stall.desc}</p>
+                        </div>
                     </div>
                 ))}
             </div>
