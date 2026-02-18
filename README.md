@@ -1,11 +1,8 @@
 # SE-PROJECT-CEN5035-
-# GatorDash – Unified Ordering Platform for Gainesville
+# GatorDash – Unified Food Ordering Platform for Gainesville
 
 ## Project Description
-GatorDash is a web-based ordering platform that allows users to browse, order, and track everyday 
-items from multiple local vendors in Gainesville through a single interface. 
-The goal of the project is to simplify the ordering process by consolidating vendor offerings 
-into one unified system.
+GatorDash is a web-based food ordering platform that allows users to browse menus, place orders from multiple local restaurants in Gainesville through a single unified interface. The platform simplifies the food ordering experience by consolidating restaurant offerings into one centralized system, enabling seamless ordering, and efficient coordination between customers and vendors.
 
 ## Team Members
 Front End:
