@@ -1,11 +1,18 @@
 # Sprint 1 – GatorDash
+## Submission Details
+- Frontend Demo Video: https://drive.google.com/file/d/18DtPeuV_5tVqjl9N_0mSN4ncVHmO3UN_/view
+- Backend Demo Video: https://drive.google.com/file/d/1wK8mj8ckc3jLcuo7_I7Cp1vUP4ydoLTL/view
+
 ## Team Contributions
-- Backend: 2 members
-- Frontend: 1 member
+- Backend: Raghul Siddarath Chandrasekar, Trinesh Reddy Bayapureddy Sannala
+- Frontend: Arvind Krishna Sundararajan 
 **Backend Tech Stack:**
 - Language: Go (Golang)
 - Database: PostgreSQL
 - API Testing: Postman
+**Frontend Tech Stack:**
+- Language: JavaScript
+- Framework: React
 
 ## User Stories
 **User Management Stories**
@@ -54,8 +61,8 @@
 - Delete User API implemented
 - APIs tested using Postman
 **Backend Work Distribution**
-- Member 1: Signup, Signin, Get User
-- Member 2: Get All Users, Update User, Delete User
+- Raghul: Signup, Signin, Setup Go project structure,Get All Users
+- Trinesh : Get User by ID, Update User, Delete User, Configure PostgreSQL database connection
 **Frontend**
 - React project initialized with custom design system and UF Gator branding
 - Sign Up page with full form validation (email, phone, password rules)
@@ -68,8 +75,6 @@
 - React Router setup with protected routes and page transition animations
 - Custom 404 Not Found page
 
-Frontend was completed by one team member.
-
 ## Issues Not Completed & Reasons
 - Full frontend-backend integration (limited time in Sprint 1)
 - Authentication middleware / JWT implementation (planned for Sprint 2)
@@ -77,8 +82,3 @@ Frontend was completed by one team member.
 
 Reason: Sprint 1 focused primarily on building foundational user management APIs and a complete, polished frontend foundation.
 
-## Submission Details
-
-- GitHub Repository Link: (Add link here)
-- Frontend Demo Video: (Add link here)
-- Backend Demo Video: (Add link here)
