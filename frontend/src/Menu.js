@@ -1,29 +1,54 @@
 import React from 'react';
+import { useParams, useNavigate } from 'react-router-dom';
+import { stalls, menus } from './data';
 import Navbar from './Navbar';
 import './Menu.css';
 
 function Menu({ onLogout }) {
-    // Boilerplate for now. We will fetch items later.
-    const stallName = "Selected Restaurant";
+    const { stallId } = useParams();
+    const navigate = useNavigate();
+
+    const stall = stalls[stallId];
+    const stallMenu = menus[stallId] || [];
+
+    if (!stall) {
+        return (
+            <div className="menu-page">
+                <Navbar onSignOut={onLogout} />
+                <div className="menu-container" style={{ textAlign: 'center', marginTop: '100px', color: 'white' }}>
+                    <h2>Restaurant not found</h2>
+                    <button className="back-btn" onClick={() => navigate('/foodstalls')} style={{ marginTop: '20px' }}>
+                        ← Back to Stalls
+                    </button>
+                </div>
+            </div>
+        );
+    }
 
     return (
         <div className="menu-page">
             <Navbar onSignOut={onLogout} />
             <div className="menu-container">
                 <div className="menu-header">
-                    <h2>{stallName} Menu</h2>
-                    <button className="back-btn">← Back to Stalls</button>
+                    <h2>{stall.name} Menu</h2>
+                    <button className="back-btn" onClick={() => navigate('/foodstalls')}>← Back to Stalls</button>
                 </div>
                 
                 <div className="menu-grid">
-                    <div className="menu-item-card placeholder">
-                        <div className="item-info">
-                            <h3 className="item-name">Menu Item Placeholder</h3>
-                            <p className="item-desc">Description of the delicious item goes here.</p>
-                            <span className="item-price">$9.99</span>
-                        </div>
-                        <button className="add-to-cart-btn">Add to Cart</button>
-                    </div>
+                    {stallMenu.length === 0 ? (
+                        <p style={{color: 'white'}}>No items available for this restaurant.</p>
+                    ) : (
+                        stallMenu.map((item) => (
+                            <div className="menu-item-card" key={item.id}>
+                                <div className="item-info">
+                                    <h3 className="item-name">{item.name}</h3>
+                                    <p className="item-desc">{item.desc}</p>
+                                    <span className="item-price">{item.price}</span>
+                                </div>
+                                <button className="add-to-cart-btn">Add to Cart</button>
+                            </div>
+                        ))
+                    )}
                 </div>
             </div>
         </div>
