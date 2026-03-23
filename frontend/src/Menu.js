@@ -19,6 +19,7 @@ function Menu({ onLogout, showToast }) {
             existing.push({ ...item, quantity: 1 });
         }
         localStorage.setItem('cart', JSON.stringify(existing));
+        window.dispatchEvent(new Event('cartUpdated'));
         if (showToast) showToast(`${item.name} added to cart!`, 'success');
     };
 
