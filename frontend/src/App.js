@@ -113,7 +113,7 @@ function App() {
           path="/menu/:stallId"
           element={
             isLoggedIn
-              ? <div className="page-transition"><Menu onLogout={handleLogout} /></div>
+              ? <div className="page-transition"><Menu onLogout={handleLogout} showToast={showToast} /></div>
               : <Navigate to="/signin" />
           }
         />
