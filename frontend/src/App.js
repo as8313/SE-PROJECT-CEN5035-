@@ -11,7 +11,9 @@ import './App.css';
 const dummyUser = { email: 'user@example.com', password: 'Password123' };
 
 function App() {
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [isLoggedIn, setIsLoggedIn] = useState(() => {
+    return localStorage.getItem('user') !== null;
+  });
 
   // SignUp form state
   const [name, setName] = useState('');
@@ -59,7 +61,9 @@ function App() {
   };
 
   const handleLogout = () => {
+    localStorage.removeItem('user');
     setIsLoggedIn(false);
+    showToast('Signed out successfully.', 'success');
   };
 
   return (
