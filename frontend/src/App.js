@@ -4,6 +4,7 @@ import SignUp from './SignUp';
 import SignIn from './SignIn';
 import FoodStalls from './FoodStalls';
 import Menu from './Menu';
+import Cart from './Cart';
 import NotFound from './NotFound';
 import Toast from './Toast';
 import './App.css';
@@ -114,6 +115,14 @@ function App() {
           element={
             isLoggedIn
               ? <div className="page-transition"><Menu onLogout={handleLogout} showToast={showToast} /></div>
+              : <Navigate to="/signin" />
+          }
+        />
+        <Route
+          path="/cart"
+          element={
+            isLoggedIn
+              ? <div className="page-transition"><Cart onLogout={handleLogout} showToast={showToast} /></div>
               : <Navigate to="/signin" />
           }
         />
