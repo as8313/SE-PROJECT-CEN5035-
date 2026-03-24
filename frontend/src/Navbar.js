@@ -31,10 +31,10 @@ function Navbar({ onSignOut }) {
             </div>
             <div className="navbar-actions">
                 <button className="nav-icon-btn" onClick={() => navigate('/profile')}>
-                    👤 Profile
+                    Profile
                 </button>
                 <button className="nav-icon-btn cart-btn" onClick={() => navigate('/cart')}>
-                    🛒 Cart
+                    Cart
                     {cartCount > 0 && (
                         <span className="cart-badge">{cartCount}</span>
                     )}

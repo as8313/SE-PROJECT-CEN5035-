@@ -60,7 +60,7 @@ function Cart({ onLogout, showToast }) {
             <Navbar onSignOut={onLogout} />
             <div className="cart-container">
                 <div className="cart-header">
-                    <h2>🛒 Your Cart</h2>
+                    <h2>Your Cart</h2>
                     <button className="back-btn" onClick={() => navigate('/foodstalls')}>
                         ← Back to Stalls
                     </button>
