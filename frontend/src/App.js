@@ -8,6 +8,7 @@ import Cart from './Cart';
 import OrderSummary from './OrderSummary';
 import NotFound from './NotFound';
 import Toast from './Toast';
+import Profile from './Profile';
 import './App.css';
 
 const dummyUser = { email: 'user@example.com', password: 'Password123' };
@@ -132,6 +133,14 @@ function App() {
           element={
             isLoggedIn
               ? <div className="page-transition"><OrderSummary onLogout={handleLogout} showToast={showToast} /></div>
+              : <Navigate to="/signin" />
+          }
+        />
+        <Route
+          path="/profile"
+          element={
+            isLoggedIn
+              ? <div className="page-transition"><Profile onLogout={handleLogout} showToast={showToast} /></div>
               : <Navigate to="/signin" />
           }
         />
